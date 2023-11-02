@@ -1,32 +1,31 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
-int main () {
-
-    int option,num;
-    cout << "PROGRAM TO CHECK PRIME NUMBERS'\n'";
-    cout << "Press 1 to Check if Number is Prime & Press 2 to Check The Range";
+int main() {
+    int option, Number;
+    cout << "For checking prime numbers(1) and for displaying prime numbers within a range(0)=";
     cin >> option;
-
     switch (option) {
-
-        case 1 :
-      cout << "Enter number:";
-      cin >> num;
-            if (num % 2 == 0)
+        case 1:
+            cout << "Enter the number:";
+            cin >> Number;
+            if (Number <= 1)
             {
-                cout<<"THE NUMBER IS EVEN";
-            } else {
-                cout<<"THE NUMBER IS ODD";
+                cout << "Number is not prime.";
             }
-
+            else
+            {
+                bool Prime = true;
+                for (int i = 2; i < Number; i++) {
+                    if (Number % i == 0)
+                    {
+                        Prime = false;
+                        break;
+                    }
+                }
+                if (Prime)
+                    cout << "Number is prime";
+                else
+                    cout << "Number is not prime.";
+            }
             break;
-
-        case 2 :
-cout << "jihg";
-
-            break;
-    }
-
-    return 0;
-}
