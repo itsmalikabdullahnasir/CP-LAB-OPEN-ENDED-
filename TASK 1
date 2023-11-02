@@ -1,1 +1,65 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int date_of_return, date_of_borrow, Fine, option;
+    int total_days;
+    total_days = date_of_return - date_of_borrow;
 
+    string book_name;
+    cout<<"Welcome to Bibliotheca Library";
+    cout << endl;
+    cout<<"1- Issue book \n 2- Return book \n 3- Quit"<<endl;
+    cout<<"Enter Your choice : ";
+    cin>>option;
+
+
+
+    if (option == 1)
+    {
+        cout<<"Name of book: ";
+        cin>>book_name;
+        cout<<"\nToday date: ";
+        cin>>date_of_borrow;
+        cout<<"\nDate you want to return on: ";
+        cin>>date_of_borrow;
+        int total_days;
+        total_days = date_of_return - date_of_borrow;
+        cout<<"total days "<<total_days;
+        cout << endl;
+        cout<<"Thank you";
+    }
+    else if(option == 2)
+    {
+        cout<<"Name of book: ";
+        cin>>book_name;
+        cout<<"\nBorrowed date: ";
+        cin>>date_of_borrow;
+        cout<<"\nToday date: ";
+        cin>>date_of_return;
+        int total_days;
+        total_days = date_of_return - date_of_borrow;
+        cout<<"total days= "<<total_days;
+        cout << endl;
+        if(total_days > 5)
+        {
+            Fine = 0+(total_days - 5);
+            cout<<"Fine= " <<"$" <<Fine;
+        }
+        else
+        {
+            cout << endl;
+            cout<<"Thank you";
+        }
+    }
+    else if (option == 3)
+    {
+        cout<<"Thank you for coming";
+    }
+    else
+    {
+        cout<<"Not Accepted Input";
+    }
+    return 0;
+
+}
