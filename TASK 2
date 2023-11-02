@@ -3,29 +3,60 @@ using namespace std;
 
 int main() {
     int option, Number;
-    cout << "For checking prime numbers(1) and for displaying prime numbers within a range(0)=";
+    cout << "PRESS 1 FOR CHECKING PRIME NUMBERS & PRESS 2 FOR PRIME NUMBER RANGE = ";
     cin >> option;
+
     switch (option) {
+        //for checking single number {prime}
         case 1:
-            cout << "Enter the number:";
+            cout << "INPUT NUMBER = ";
+
             cin >> Number;
-            if (Number <= 1)
-            {
-                cout << "Number is not prime.";
+            if (Number <= 1) {
+                cout << "GIVEN NUMBER IS NOT PRIME";
             }
             else
             {
-                bool Prime = true;
-                for (int i = 2; i < Number; i++) {
+                bool prime = true;
+                for (int i = 2; i < Number; i++)
+                {
+
                     if (Number % i == 0)
                     {
-                        Prime = false;
+                        prime = false;
                         break;
                     }
                 }
-                if (Prime)
-                    cout << "Number is prime";
+                if (prime)
+                    cout << "PRIME NUMBER";
                 else
-                    cout << "Number is not prime.";
+                    cout << "NOT A PRIME NUMBER";
             }
             break;
+
+            //for range of prime number!!!!!!!!!!
+
+        case 2:
+            int start, end;
+            cout << "Start:";
+            cin >> start;
+            cout << "End";
+            cin >> end;
+
+            for (int i = start; i <= end; i++)
+            {
+                bool prime = true;
+                for (int j = 2; j < i; j++)
+                {
+                    if (i % j == 0) {
+                        prime = false;
+                        break;
+                    }
+                }
+                if (prime)
+                    cout << i << " ";
+            }
+
+    }
+    return 0;
+}
